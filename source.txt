@@ -1,0 +1,3 @@
+## 📜 Credits
+This portfolio is based on a template by [CodeWithSadee](https://github.com/codewithsadee).
+I have customized the design, added my own projects, and modified the sections to fit my needs.
