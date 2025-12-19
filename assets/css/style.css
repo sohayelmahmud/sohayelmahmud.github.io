@@ -1044,6 +1044,40 @@ main {
 
 .skills-item:not(:last-child) {
   margin-bottom: 15px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .skills-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px 50px;
+    position: relative;
+  }
+
+  .skills-list::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 50%;
+    width: 1px;
+    background: var(--jet);
+    transform: translateX(-50%);
+  }
+
+  .skills-item:nth-child(even) {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
 }
 
 .skill .title-wrapper {
