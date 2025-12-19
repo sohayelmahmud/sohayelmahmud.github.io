@@ -1142,11 +1142,8 @@
         <section class="contact-form">
 
           <h3 class="h3 form-title">Contact Form</h3>
-          <div class="about-text">
-            <i>I don't have a server to handle the form submission, so the form is just for show.</i>
-          </div>
 
-          <form action="#" class="form" data-form>
+          <form id="my-form" class="form" data-form>
 
             <div class="input-wrapper">
               <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
@@ -1171,7 +1168,10 @@
 
   </main>
 
-
+  <div id="success-toast" class="toast-notification">
+    <span class="toast-icon"></span>
+    Thank you! Your message has been sent.
+  </div>
 
 
 

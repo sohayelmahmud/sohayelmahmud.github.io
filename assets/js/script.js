@@ -120,6 +120,32 @@ const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");
 
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const data = new FormData(event.target);
+
+  fetch("https://formspree.io/f/mykgzvjw", {
+    method: "POST",
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  }).then(response => {
+    if (response.ok) {
+      const toast = document.getElementById("success-toast");
+      toast.style.display = "block";
+
+      setTimeout(() => { toast.style.display = "none"; }, 5000);
+
+      form.reset();
+      formBtn.setAttribute("disabled", "");
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
+  }).catch(error => {
+    alert("It seems like there is a problem with your network connection. Please try again.");
+  });
+});
+
 // add event to all form input field
 for (let i = 0; i < formInputs.length; i++) {
   formInputs[i].addEventListener("input", function () {
