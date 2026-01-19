@@ -1469,11 +1469,15 @@ main {
   left: 50%;
   transform: translate(-50%, -50%) scale(var(--scale));
   font-size: 20px;
-  padding: 18px;
+  padding: 12px;
   border-radius: 12px;
   opacity: 0;
   z-index: 1;
   transition: var(--transition-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
 }
 
 .project-item>a:hover .project-item-icon-box {
@@ -2509,17 +2513,17 @@ textarea.form-input::-webkit-resizer {
    */
 
   main {
-    max-width: 1200px;
+    max-width: 1300px;
     margin-inline: auto;
     display: flex;
     justify-content: center;
     align-items: stretch;
-    gap: 25px;
+    gap: 15px;
   }
 
   .main-content {
-    min-width: 75%;
-    width: 75%;
+    min-width: 70%;
+    width: 70%;
     margin: 0;
   }
 
