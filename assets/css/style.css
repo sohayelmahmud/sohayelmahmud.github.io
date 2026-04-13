@@ -387,6 +387,24 @@ main {
   border-radius: 8px;
 }
 
+.download-cv-btn {
+  background: var(--text-gradient-yellow);
+  color: var(--smoky-black);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-500);
+  width: -moz-max-content;
+  width: max-content;
+  padding: 8px 18px;
+  border-radius: 8px;
+  margin-top: 15px;
+  transition: var(--transition-1);
+  text-align: center;
+}
+
+.download-cv-btn:hover {
+  box-shadow: 0 5px 10px hsla(45, 100%, 72%, 0.2);
+}
+
 .info_more-btn {
   position: absolute;
   top: -15px;
