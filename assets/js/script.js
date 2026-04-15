@@ -11,6 +11,31 @@ const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
+// CV Download function
+async function downloadCV() {
+  const url = 'https://raw.githubusercontent.com/sohayelmahmud/CV/main/docs/CV-short.pdf';
+
+  try {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    const blobUrl = window.URL.createObjectURL(blob);
+
+    const link = document.createElement('a');
+    link.href = blobUrl;
+    link.download = 'Sohayel_Mahmud_CV.pdf'; // downloaded file name
+    document.body.appendChild(link);
+    link.click();
+
+    // cleanup
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(blobUrl);
+  } catch (error) {
+    console.error('Download failed:', error);
+    // emergency
+    window.open(url, '_blank');
+  }
+}
+
 // sidebar toggle functionality for mobile
 sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
 
