@@ -1309,77 +1309,108 @@ main {
  * skills
  */
 
+.skill .title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
 .skills-title {
   margin-bottom: 20px;
 }
 
-.skills-list {
-  padding: 20px;
-}
-
-
-.skills-item:not(:last-child) {
-  margin-bottom: 15px;
-  width: 100%;
+.skills-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-top: 20px;
 }
 
 @media (min-width: 768px) {
-  .skills-list {
-    display: grid;
+  .skills-content {
     grid-template-columns: 1fr 1fr;
-    gap: 25px 50px;
-    position: relative;
-  }
-
-  .skills-list::before {
-    content: "";
-    position: absolute;
-    top: 10px;
-    bottom: 10px;
-    left: 50%;
-    width: 1px;
-    background: var(--jet);
-    transform: translateX(-50%);
-  }
-
-  .skills-item:nth-child(even) {
-    border-left: none;
-    padding-left: 0;
+    gap: 40px 30px;
   }
 }
 
-@media (max-width: 767px) {
-  .skills-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
+.skills-category {
+  margin-bottom: 10px;
 }
 
-.skill .title-wrapper {
+.skills-category-title {
+  color: var(--white-2);
+  font-size: var(--fs-5);
+  margin-bottom: 15px;
   display: flex;
   align-items: center;
-  margin-bottom: 8px;
-  gap: 15px;
+  gap: 10px;
+  text-transform: capitalize;
 }
 
-.skill .title-wrapper data {
-  color: var(--light-gray);
-  font-size: var(--fs-7);
-  font-weight: var(--fw-300);
+.skills-category-title ion-icon {
+  color: var(--orange-yellow-crayola);
+  font-size: 18px;
 }
 
-.skill-progress-bg {
-  background: var(--jet);
-  width: 100%;
-  height: 8px;
-  border-radius: 10px;
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.skill-progress-fill {
-  background: var(--text-gradient-yellow);
-  height: 100%;
+.skill-item {
+  position: relative;
+  background: var(--border-gradient-onyx);
+  border: 1px solid var(--jet);
+  border-radius: 8px;
+  padding: 8px 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: var(--shadow-1);
+  transition: var(--transition-1);
+  z-index: 1;
+}
+
+.skill-item::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
   border-radius: inherit;
+  z-index: -1;
+  transition: var(--transition-1);
+}
+
+.skill-item:hover {
+  border-color: var(--orange-yellow-crayola);
+}
+
+.skill-item ion-icon,
+.skill-item .fa-brands,
+.skill-item .fa-solid,
+.skill-item i {
+  color: var(--orange-yellow-crayola);
+  font-size: 16px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+/* Make Font Awesome icons look slightly thinner/lighter to match IonIcons */
+.skill-item .fa-brands,
+.skill-item .fa-solid,
+.skill-item i {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+.skill-item span {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-400);
 }
 
 
