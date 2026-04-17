@@ -1388,8 +1388,6 @@ main {
 }
 
 .skill-item ion-icon,
-.skill-item .fa-brands,
-.skill-item .fa-solid,
 .skill-item i {
   color: var(--orange-yellow-crayola);
   font-size: 16px;
@@ -1397,14 +1395,19 @@ main {
   margin-right: 5px;
 }
 
-/* Make Font Awesome icons look slightly thinner/lighter to match IonIcons */
-.skill-item .fa-brands,
-.skill-item .fa-solid,
+.skill-item .fa-brands {
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.skill-item .fa-solid {
+  font-weight: 900;
+  font-size: 14px;
+}
+
 .skill-item i {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-weight: 300;
-  opacity: 0.9;
 }
 
 .skill-item span {
